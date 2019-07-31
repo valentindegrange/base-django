@@ -37,9 +37,13 @@ DEFAULT_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'rest_framework'
 ]
 
-INTERNAL_APPS = []
+INTERNAL_APPS = [
+    'users',
+    'api'
+]
 
 INSTALLED_APPS = DEFAULT_APPS + INTERNAL_APPS
 
@@ -122,3 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
